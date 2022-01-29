@@ -1,0 +1,19 @@
+%ic {
+	font-family: "iconsfonts";
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+[class*="iconsfonts-"] {
+	&:before {
+		@extend %ic;
+		display: block;
+	}
+}
+.iconsfonts-upload:before {
+	content: "\e900";
+}

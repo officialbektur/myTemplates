@@ -1,0 +1,71 @@
+/* =============================================  Scroll Up Button  --Start--  ============================================= */
+.up__button {
+	position: fixed;
+    bottom: 6%;
+    right: 12px;
+    z-index: 80;
+	pointer-events: none;
+    cursor: pointer;
+	opacity: 0;
+    visibility: hidden;
+	-webkit-tap-highlight-color: $clickByTouchColor;
+	transition: all 0.4s ease 0s;
+	&._active {
+		pointer-events: all;
+		opacity: 1;
+		visibility: visible;
+	}
+}
+.up__button_icon {
+	position: relative;
+	width: rem(54);
+	height: rem(54);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: $colorWhite5;
+    box-shadow: 0px 0px rem(2) 0px #b8b8b8,
+				0px 0px rem(4) 0px #b8b8b8,
+				0px 0px rem(6) 0px #b8b8b8,
+				0px 0px rem(10) 0px #b8b8b8;
+	transition: all 0.4s ease-in-out 0s;
+	&::after,
+	&::before {
+		content:'';
+		position: absolute;
+		width: rem(22);
+		height: rem(4);
+		background-color: $colorBlack;
+	}
+	&::after {
+		left: 17%;
+		border-bottom-right-radius: rem(2);
+		border-top-right-radius: rem(2);
+		transform: rotate(135deg);
+	}
+	&::before {
+		right: 17%;
+		border-bottom-left-radius: rem(2);
+		border-top-left-radius: rem(2);
+		transform: rotate(-135deg);
+	}
+	html._pc &:hover {
+		box-shadow: 0px 0px rem(5) 0px #b8b8b8,
+					0px 0px rem(7) 0px #b8b8b8,
+					0px 0px rem(10) 0px #b8b8b8,
+					0px 0px rem(14) 0px #b8b8b8;
+	}
+	@media (max-width: em(767)) {
+		.up__button_icon {
+			width: rem(58);
+			height: rem(58);
+		}
+	}
+	@media (max-width: em(360)) {
+		.up__button_icon {
+			width: rem(54);
+			height: rem(54);
+		}
+	}
+}
+/* =============================================  Scroll Up Button  --End--  ============================================= */

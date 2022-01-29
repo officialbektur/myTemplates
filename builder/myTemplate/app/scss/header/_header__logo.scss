@@ -1,0 +1,49 @@
+/* ===================================  Logo  --Start--  =================================== */
+.header__logo {
+	border-radius: 50%;
+	position: relative;
+	width: rem(44);
+	height: rem(44);
+	z-index: 91;
+	cursor: pointer;
+	box-shadow: 0px 0px rem(7) #ff0000,
+				0px 0px rem(9) #ff0000,
+				0px 0px rem(12) #ff0000,
+				0px 0px rem(26) #ff0000;
+	-webkit-tap-highlight-color: $clickByTouchColor;
+	transition: all 0.5s ease 0s;
+	html._pc &:hover {
+		box-shadow: 0px 0px rem(9) #ff0000,
+					0px 0px rem(14) #ff0000,
+					0px 0px rem(22) #ff0000,
+					0px 0px rem(34) #ff0000;
+	}
+	html._touch &:active {
+		box-shadow: 0px 0px rem(9) #ff0000,
+					0px 0px rem(14) #ff0000,
+					0px 0px rem(22) #ff0000,
+					0px 0px rem(34) #ff0000;
+	}
+}
+/* ====================  Logo Icon  ==================== */
+.header__logo_icon {
+	width: 100%;
+	height: 100%;
+	color: #ffffff;
+	font-size: rem(16);
+	font-weight: bold;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	user-select: none;
+	animation: animLogo 6s infinite;
+	@keyframes animLogo {
+		0% {
+			transform: rotateY(0deg);
+		}
+		100% {
+			transform: rotateY(360deg);
+		}
+	}
+}
+/* ===================================  Logo  --End--  =================================== */

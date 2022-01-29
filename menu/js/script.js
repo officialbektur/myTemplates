@@ -63,7 +63,7 @@ window.addEventListener("resize", function () {
 	defineСomputerOrMobile();
 	deleteActiveWindowLarger767px();
 	deleteActiveAtSublistOnPc();
-	dynamic_adapt();
+	responsive();
 	animElements();
 	minWindowScreen250();
 	/* ====================  Launching Functions  --End--  ==================== */

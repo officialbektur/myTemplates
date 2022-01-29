@@ -1,76 +1,9 @@
 /* ====================  Strict regime  ==================== */
 'use strict';
 /* =============================================  Default  --Start--  ============================================= */
-/* =============================================  here PRELOADER  ============================================= */
-/* =============================================  Meta Viewport Adaptation for a mobile device  --Start--  ============================================= */
-function minWindowScreen250() {
-	let screenWidth = screen.width;
-	let metaViewport = document.getElementById("metaViewport");
-	if (screenWidth < 250) {
-		document.body.classList.add("_minWindowScreen250");
-		metaViewport.setAttribute("content", "width=1200");
-	} else {
-		document.body.classList.remove("_minWindowScreen250");
-		metaViewport.setAttribute("content", "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no");
-	}
-}
-minWindowScreen250();
-/* =============================================  Meta Viewport Adaptation for a mobile device  --End--  ============================================= */
-/* ===================================  Identify Computer or Mobile  --Start--  =================================== */
-function defineСomputerOrMobile() {
-	var isMobile = {
-		Android: function () {
-			return navigator.userAgent.match(/Android/i)
-		},
-		BlackBerry: function () {
-			return navigator.userAgent.match(/BlackBerry/i)
-		},
-		iOS: function () {
-			return navigator.userAgent.match(/iPhone|iPad|iPod/i)
-		},
-		Opera: function () {
-			return navigator.userAgent.match(/Opera Mini/i)
-		},
-		Windows: function () {
-			return navigator.userAgent.match(/IEMobile/i)
-		},
-		any: function () {
-			return (
-				isMobile.Android() ||
-				isMobile.BlackBerry() ||
-				isMobile.iOS() ||
-				isMobile.Opera() ||
-				isMobile.Windows());
-		}
-	};
-	if (isMobile.any()) {
-		if (document.body.classList.contains("_pc")) {
-			document.body.classList.remove("_pc");
-		}
-		document.body.classList.add("_mobile");
-	} else {
-		if (document.body.classList.contains("_mobile")) {
-			document.body.classList.remove("_mobile");
-		}
-		document.body.classList.add("_pc");
-	}
-}
-defineСomputerOrMobile();
-/* ===================================  Identify Computer or Mobile  --End--  =================================== */
-/* ====================  Checking the screen resizing  --Start--  ==================== */
-window.addEventListener("resize", function () {
-	/* ====================  Launching Functions  --Start--  ==================== */
-	defineСomputerOrMobile();
-	minWindowScreen250();
-	/* ====================  Launching Functions  --End--  ==================== */
-});
-/* ====================  Checking the screen resizing  --End--  ==================== */
 
 
 
-
-
-// Контакт
 document.addEventListener("DOMContentLoaded", function () {
 	const form = document.getElementById("form");
 	form.addEventListener("submit", formSend);

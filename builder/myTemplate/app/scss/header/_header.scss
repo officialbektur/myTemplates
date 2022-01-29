@@ -1,0 +1,165 @@
+/* ===================================  Header  --Start--  =================================== */
+.header {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	z-index: 90;
+	background-color: $colorBlack;
+	&__menu {
+		position: relative;
+		z-index: -1;
+	}
+}
+.header__body {
+	padding: 10px 0px;
+	min-height: rem(70);
+	display: flex;
+    justify-content: space-between;
+	align-items: center;
+	position: relative;
+	z-index: 95;
+}
+@import "_header__logo";// ====================  here Logo  ==================== //
+/* ===================================  Menu body  --Start--  =================================== */
+/* ====================  Menu list  ==================== */
+.menu__list {
+	z-index: 1;
+	> li {
+		position: relative;
+		margin: 0px 0px 0px 20px;
+	}
+	@media (min-width: $mobile) {
+		display: flex;
+		align-items: center;
+	}
+	@media (max-width: $mobile) {
+		@include adaptiveValue("margin-left", 150, 35);
+		@include adaptiveValue("margin-right", 150, 35);
+		position: relative;
+		z-index: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		li {
+			display: flex;
+			justify-content: center;
+		}
+		> li {
+			flex-wrap: wrap;
+			margin: 0px;
+		}
+	}
+	@media (max-width: em(360)) {
+		margin: 0px 0px;
+	}
+}
+.menu__link {
+	padding: 10px 0px;
+	width: 100%;
+	font-size: rem(16);
+	font-weight: bold;
+	color: #ffffff;
+	cursor: pointer;
+	user-select: none;
+	-webkit-tap-highlight-color: $clickByTouchColor;
+	html._pc &:hover {
+		text-decoration: underline;
+	}
+	@media (max-width: $mobile) {
+		padding: rem(20) 0px;
+		@include adaptiveValue("font-size", 36, 30);
+		text-align: center;
+	}
+}
+/* ====================  Icon Menu Burger  ==================== */
+.icon-menu {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+		width: rem(46);
+		height: rem(28);
+		cursor: pointer;
+		z-index: 5;
+		-webkit-tap-highlight-color: $clickByTouchColor2;
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			left: 0px;
+			position: absolute;
+			width: 100%;
+			height: rem(3);
+			background-color: $colorWhite;
+			box-shadow: 0px 0px 2px #ffffff;
+		}
+		&::before {
+			top: 0px;
+		}
+		&::after {
+			bottom: 0px;
+		}
+		span {
+			top: calc(50% - rem(1.5));
+		}
+		.menu-open & {
+			span {
+				transform: scale(0);
+			}
+			&::before {
+				transform: rotate(-45deg);
+				top: calc(50% - 1px);
+			}
+			&::after {
+				transform: rotate(45deg);
+				bottom: calc(50% - 1px);
+			}
+		}
+	}
+}
+@media (max-width: $mobile) {
+	.menu__body {
+		position: fixed;
+		top: 0px;
+		right: -100%;
+		width: 100%;
+		height: 100%;
+		padding: 100px 30px 30px 30px;
+		transition: right 0.5s ease 0s;
+		overflow-y: auto;
+		&::before {
+			content: "";
+			position: fixed;
+			top: 0px;
+			right: -100%;
+			width: 100%;
+			height: rem(70);
+			background-color: $colorBlack;
+			z-index: 100;
+			transition: right 0.5s ease 0s;
+		}
+		&:after {
+			content: "";
+			position: fixed;
+			top: -90px;
+			right: -100%;
+			width: 100%;
+			height: 100%;
+			transition: right 0.5s ease 0s;
+			background-color: rgba(0, 0, 0, 0.95);
+			transform: translateY(90px);
+		}
+		.menu-open &::before,
+		.menu-open &::after {
+			right: 0%;
+		}
+		.menu-open & {
+			right: 0px;
+		}
+	}
+}
+@import "dropdownlist/_dropdown__list";// ====================  here Dropdown list  ==================== //
+/* ===================================  Menu body  --End--  =================================== */
+/* ===================================  Header  --End--  =================================== */

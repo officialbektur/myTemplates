@@ -1,0 +1,113 @@
+/* ===================================  Dropdown List  --Start--  =================================== */
+.menu__list_sublist {
+	cursor: pointer;
+	-webkit-tap-highlight-color: $clickByTouchColor;
+	&._active .menu__arrow {
+		transform: rotate(-180deg);
+	}
+	&._active .menu__sub_list {
+		opacity: 1;
+		visibility: visible;
+		pointer-events: all;
+		display: block;
+		cursor: pointer;
+		transition: all 0.6s ease 0s;
+		@media (max-width: $mobile) {
+			left: 0px;
+			transform: translate(0px, 0px);
+		}
+	}
+	&-title {
+		width: 100%;
+		@media (max-width: $mobile) {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-wrap: nowrap;
+		}
+	}
+	&-title .menu__link {
+		width: auto;
+	}
+}
+/* ====================  Icon dropdown list  ==================== */
+.menu__arrow {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	margin: 0px 0px 0px rem(8);
+	border-left: solid rem(5) transparent;
+	border-right: solid rem(5) transparent;
+	border-top: solid rem(10) $colorWhite;
+	transition: transform 0.6s ease 0s;
+	@media (min-width: $mobile) {
+		html._pc .menu__list > li:hover & {
+			transform: rotate(-180deg);
+		}
+	}
+}
+.menu__sub_list {
+	position: absolute;
+	top: 100%;
+	min-width: rem(140);
+	padding: rem(12) rem(16);
+	border: solid 1px $colorBlack7;
+	text-align: center;
+	opacity: 0;
+	visibility: hidden;
+	background-color: $colorBlack;
+	transition: all 0.3s ease 0s;
+	z-index: 91;
+	pointer-events: none;
+	cursor: pointer;
+	-webkit-tap-highlight-color: $clickByTouchColor;
+	@media (min-width: $mobile) {
+		left: 50%;
+		transform: translate(-50%, 0px);
+		html._pc .menu__list > li:hover & {
+			pointer-events: all;
+			opacity: 1;
+			visibility: visible;
+			transform: translate(-50%, 0px);
+		} 
+	}
+	@media (max-width: $mobile) {
+		position: relative;
+		background-color: $colorWhite;
+		display: none;
+		.menu__list > li._active & {
+			display: block;
+		}
+		& > li:nth-child(1) {
+			margin-top: 0px;
+		}
+		& > li:last-child {
+			margin: 12px 16px 0px;
+		}
+		& > li {
+			margin: 12px 16px;
+		}
+	}
+	> li {
+		margin: 0px 0px 6px 0px;
+	}
+	> li:last-child{
+		margin: 0px 0px;
+	}
+}
+.menu__sub_link {
+	font-size: rem(14);
+	font-weight: bold;
+	color: $colorWhite;
+	user-select: none;
+	html._pc &:hover {
+		text-decoration: underline;
+	}
+	@media (max-width: $mobile) {
+		width: 100%;
+		color: $colorBlack;
+		@include adaptiveValue("font-size", 22, 20);
+	}
+}
+/* ===================================  Dropdown List  --End--  =================================== */

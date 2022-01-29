@@ -1,0 +1,15 @@
+body {
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	color: #fff;
+	font-size: 18px;
+	line-height: 180%;
+	background-color: #383838;
+	overflow-x: hidden;
+	overflow-y: auto;
+	&.lock {
+		overflow-y: hidden;
+	}
+	&._minWindowScreen250 {
+		overflow: auto;
+	}
+}
